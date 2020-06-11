@@ -1,16 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import Nav from './components/Nav/Nav';
+import Gallery from './components/Gallery/Gallery';
+import { fetchImages } from './api';
 
 import './assets/css/main.css';
-class App extends Component {
-    render () {
-        return (
-            <div className="h-full w-full bg-gray-200 flex items-center justify-center">
-                <div className="px-3 py-2 bg-green-200">
-                    <h1 className="text-3xl font-bold">Hello Allergy</h1>
-                </div>
-            </div>
-        );
-    }
+
+const App = () => {
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        const fetchAPI = async () => {
+            setImages(await fetchImages());
+        }
+        
+        fetchAPI();
+    }, []);
+
+    return (
+        <div>
+            <Nav />
+            <Gallery images={images} />
+        </div>
+    );
 }
 
 export default App;
