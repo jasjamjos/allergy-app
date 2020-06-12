@@ -8,7 +8,7 @@ const Gallery = (props) => {
                 console.log(image)
                 return(
                     <div className="bg-white rounded border border-gray-300 shadow-sm max-w-sm" key={image.id}>
-                        <img className="object-cover w-full" src={image.urls.regular} alt={image.alt_description}/>
+                        <img className="object-cover w-full h-64" src={image.urls.small} alt={image.alt_description}/>
                         <div className="px-6 py-4">
                             <div className="font-bold text-orange-400 text-xl mb-2">Photo by {image.user.name}</div>
                             <ul>

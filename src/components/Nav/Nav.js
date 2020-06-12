@@ -2,7 +2,7 @@
 import React from 'react';
 import Logo from '../../assets/images/logo.png';
 
-const Nav = () => {
+const Nav = (props) => {
     return (
         <div className="relative bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -16,15 +16,15 @@ const Nav = () => {
                     </a>
                 </div>
                 <nav className="flex space-x-5 sm:space-x-10">
-                    <a href="#" className="text-base leading-6 font-medium text-gray-500 hover:text-orange-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+                    <button onClick={() => props.handleSearch('cat')} className="text-base leading-6 font-medium text-gray-500 hover:text-orange-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                         <span className="mr-2" aria-label="cat" role="img">🐈️</span>Cats
-                    </a>
-                    <a href="#" className="text-base leading-6 font-medium text-gray-500 hover:text-orange-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+                    </button>
+                    <button onClick={() => props.handleSearch('dog')} className="text-base leading-6 font-medium text-gray-500 hover:text-orange-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                         <span className="mr-2" aria-label="dog" role="img">🐕️</span>Dogs
-                    </a>
-                    <a href="#" className="text-base leading-6 font-medium text-gray-500 hover:text-orange-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+                    </button>
+                    <button onClick={() => props.handleSearch('duck')} className="text-base leading-6 font-medium text-gray-500 hover:text-orange-600 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                         <span className="mr-2" aria-label="duck" role="img">🦆️</span>Ducks
-                    </a>
+                    </button>
                 </nav>
                 <div className="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0 focus:outline-none">
                     <div className="flex items-center">
